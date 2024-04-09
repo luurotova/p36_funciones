@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+</head>
+<body>
+    
+    <script>
+        //creo una funcion que pinte una circumferencia en el centro de la pantalla con el diametro especificado por parametrosd de la misma (en px)
+
+        function pintarCircumferencia(diametro){
+            document.body.innerHTML =
+            `<div class="sphere" style="margin: 0 auto; width: ${diametro}px; height: ${diametro}px; border-radius: 50%; background-color: green">`;
+        
+        }
+        
+        //llamada
+        pintarCircumferencia(300);
+    </script>
+</body>
+</html>

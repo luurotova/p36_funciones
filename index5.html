@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+</head>
+
+<body>
+    
+    <div class="dom-container">
+        <div class="domObj">Soy un objeto del dom</div>
+    </div>
+    
+    <script>
+       const objx = {
+           showScope: () => {
+               console.log(this);
+           },
+           showScope2: function(){
+               console.log(this);
+           }
+       }
+    </script>
+</body>
+
+</html>

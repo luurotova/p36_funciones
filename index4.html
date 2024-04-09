@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+</head>
+
+<body>
+    <style>
+        .dom-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 10px 20px;
+        }
+    </style>
+    <div class="dom-container">
+        <div class="domObj">Soy un objeto del dom</div>
+    </div>
+    <div class="action-buttons">
+        <button value="copy">Copy</button>
+        <button value="delete">Delete</button>
+        <button value="insert">Insert</button>
+    </div>
+    </div>
+
+
+
+    <script>
+        const domObjContainer = document.querySelector(".dom-container");
+        const actionBtns = document.querySelector(".action-buttons");
+        const domMAnipulator = function (e) { 
+            const objDom = document.querySelector(".domObj"); //Lo que he dicho es que vuelva a recorrer para ver sy hay elementos para modificar el dom
+
+            if (e.target.value === "copy") {
+                //copiar
+                objDom && domObjContainer.appendChild(objDom.cloneNode(true)); //si hay elemento, copialo, si no, no hagas nada
+
+            } else if (e.target.value === "delete") {
+                //borrar
+                objDom && objDom.remove(); //si hay elemento, borralo, si no, no hagas nada
+            }
+            else if (e.target.value === "insert") {
+                //insertar
+                domObjContainer.innerHTML += "Soy un objeto del dom"; //si no hay elemento, generalo
+            } else {
+                return;
+            }
+        }
+
+        actionBtns.addEventListener("click", domMAnipulator);
+    </script>
+</body>
+
+</html>

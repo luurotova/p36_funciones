@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+</head>
+<body>
+    
+    <script>
+        //Crea un objeto que tenga un método que permita concatenar los valores de todas sus propiedades (sin harcodear)
+
+        const myObj = {
+            p1 : "Pablo",
+            p2 : "Martinez",
+            p3 :  25,
+            p4 : "Calle falsa 123",
+            p5 : "país de la piruleta",
+            // esto es un metodo (meter una funcion dentro de un objeto)
+            concat: function(){
+
+                //creo variable vacia
+                let result = "";
+
+                //creo array conlas propiedades vacias del objeto
+                Object.values (this).forEach(prop => {
+
+                    //concateno
+                    if (typeof prop != "function")result += prop + ", ";
+                })
+                return result;
+            }
+        }
+        
+        document.body.innerHTML = myObj.concat();
+
+        //metodos de objeto
+        //Object.keys(myObj) -> devuelve un array con las propiedades del objeto (en este caso p1, p2, p3)
+        //Object.values(myObj) -> devuelve un array con los valores de las propiedades del objeto (en este caso "Pablo", "Martinez", 25)
+
+        console.log(typeof myObj);
+        console.log(Object.values(myObj));
+
+        //object.entries(myObj) hace lo mismo pero te devuelve un array conlos pares de valores (propiedad+valor -> p1, Pablo; p2, Martinez...)
+
+
+
+
+
+    </script>
+</body>
+</html>
